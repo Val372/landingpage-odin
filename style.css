@@ -1,0 +1,145 @@
+body{
+    background-color: white
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* wichtig für genaue Größenberechnung */
+}
+
+.container{
+
+}
+
+header{
+background: black;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 100px;
+margin: 0;   /* entfernt äußeren Abstand */
+}
+
+ul {
+list-style: none;  /* Aufzählungspunkte entfernen */
+display: flex;
+gap: 10px;
+}
+
+ul li a {
+    color: white;         
+    text-decoration: none; 
+    font-weight:lighter;
+    font-size: 10px; /* Schriftgröße anpassen */
+}
+
+
+.logo img {
+    height: 50px; /* passt nur das Bild an */
+}
+
+
+.hero{
+display: flex;
+background:black;
+color: white;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 0 100px;
+margin: 0;   /* entfernt äußeren Abstand */
+height: 300px;
+}
+
+.hero-button{
+    background: rgb(9, 103, 113);
+    color: white;
+    border: none;               /* Standardrahmen entfernen */
+    border-radius: 12px;        /* Abgerundete Ecken */
+}
+
+.hero img {
+    width: 30%;      /* Bild skalieren */
+    max-width: 500px; /* maximale Breite */
+    height: auto;     /* Höhe proportional */
+    max-height: 80%;  /* Bild maximal 80% der Containerhöhe */
+    height: auto;     /* Höhe proportional */
+    object-fit: contain; /* Bild wird nicht verzerrt */
+}
+
+.intro-section{
+background: white
+color: black;
+}
+
+.headline{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.image-gallery {
+    display: flex;          /* Bilder nebeneinander anordnen */
+    gap: 20px;              /* Abstand zwischen den Bildern */
+    flex-wrap: wrap;        /* Bilder umbrechen bei kleinerem Bildschirm */
+    justify-content: space-between; /* optional: Abstand gleichmäßig */
+    padding: 0 100px;
+}
+
+.image-gallery figure {
+    flex: 1 1 200px; /* Breite flexibel, mindestens 200px */
+    margin: 0;       /* unnötige Abstände entfernen */
+}
+
+.image-gallery img {
+    width: 100%;     /* Bild passt in das Figure */
+    height: auto;
+    border-radius: 8px; /* optional: abgerundete Ecken */
+}
+
+.quote {
+background: rgb(192, 186, 186);
+color: black;
+display: flex;
+padding: 0 100px;
+}
+
+.cta-section {
+background: white;
+display: flex;
+padding: 0 100px;
+}
+
+.cta-content {
+display: flex;
+justify-content: space-between;
+gap: 50px;
+align-items: center;  
+padding: 0 20px;
+background: rgb(20, 101, 94);
+width: 100%;
+margin: 50px 0
+}
+
+.cta-text {
+    flex: 1;
+    color: white;
+}
+
+.cta-button {
+    background: rgb(9, 101, 94);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+footer{
+background: black;
+color: white;
+display: flex;
+font-size: x-small;
+justify-content: center;
+align-items: center;
+height: 80px;
+}
