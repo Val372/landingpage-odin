@@ -1,145 +1,223 @@
-body{
-    background-color: white
-    font-family: Arial, sans-serif;
+/* Basis */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400; /* normaler Text als Standard */
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* wichtig für genaue Größenberechnung */
+    line-height: 1.5;
 }
 
-.container{
-
+/* Container: zentriert den Inhalt */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;  /* Abstand rechts & links */
 }
 
-header{
-background: black;
-color: white;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 100px;
-margin: 0;   /* entfernt äußeren Abstand */
+/* Header */
+header {
+    background: black;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 ul {
-list-style: none;  /* Aufzählungspunkte entfernen */
-display: flex;
-gap: 10px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 ul li a {
-    color: white;         
-    text-decoration: none; 
-    font-weight:lighter;
-    font-size: 10px; /* Schriftgröße anpassen */
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: lighter;
 }
-
 
 .logo img {
-    height: 50px; /* passt nur das Bild an */
+    height: 50px;
 }
 
-
-.hero{
-display: flex;
-background:black;
-color: white;
-justify-content: center;
-align-items: center;
-gap: 20px;
-padding: 0 100px;
-margin: 0;   /* entfernt äußeren Abstand */
-height: 300px;
+/* Hero Section */
+.hero {
+  background: black;
+  color: white;
+  padding: 40px 0; /* oben/unten Luft */
 }
 
-.hero-button{
-    background: rgb(9, 103, 113);
+.hero .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* sorgt dafür, dass auf Mobile Bild UNTER den Text springt */
+}
+
+.hero-button {
+    background: rgb(6, 149, 177);
     color: white;
-    border: none;               /* Standardrahmen entfernen */
-    border-radius: 12px;        /* Abgerundete Ecken */
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
 .hero img {
-    width: 30%;      /* Bild skalieren */
-    max-width: 500px; /* maximale Breite */
-    height: auto;     /* Höhe proportional */
-    max-height: 80%;  /* Bild maximal 80% der Containerhöhe */
-    height: auto;     /* Höhe proportional */
-    object-fit: contain; /* Bild wird nicht verzerrt */
+  flex: 0 0 auto;    /* Bild bleibt neben Text */
+  max-width: 300px;  /* Bild kleiner machen */
+  max-height: 180px; /* rechteckig halten */
+  width: auto;
+  height: auto;
 }
 
-.intro-section{
-background: white
-color: black;
+.hero-content {
+  flex: 1;           /* Text nimmt so viel Platz wie möglich */
+  min-width: 250px;  /* nicht zu schmal werden */
 }
 
-.headline{
-display: flex;
-justify-content: center;
-align-items: center;
+/* Intro Section */
+.intro-section {
+    background: white;
+    color: black;
+    
+}
+
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
 }
 
 .image-gallery {
-    display: flex;          /* Bilder nebeneinander anordnen */
-    gap: 20px;              /* Abstand zwischen den Bildern */
-    flex-wrap: wrap;        /* Bilder umbrechen bei kleinerem Bildschirm */
-    justify-content: space-between; /* optional: Abstand gleichmäßig */
-    padding: 0 100px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .image-gallery figure {
-    flex: 1 1 200px; /* Breite flexibel, mindestens 200px */
-    margin: 0;       /* unnötige Abstände entfernen */
+    flex: 0 1 100px;
+    margin: 0 0 80px 0;
 }
 
 .image-gallery img {
-    width: 100%;     /* Bild passt in das Figure */
-    height: auto;
-    border-radius: 8px; /* optional: abgerundete Ecken */
+    width: 200px;
+    height: 200px;
+    border: 4px solid rgb(116, 166, 179);
+    border-radius: 16px;
 }
 
+.image-gallery figcaption {
+    font-size: 15px;
+}
+
+/* Quote Section */
 .quote {
-background: rgb(192, 186, 186);
-color: black;
-display: flex;
-padding: 0 100px;
+    background: rgb(192, 186, 186);
+    color: black;
 }
 
+.quote .container {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quote blockquote {
+    display: flex;
+    justify-content: space-between; /* Zitat links, Autor rechts */
+    flex-wrap: wrap;                /* sorgt dafür, dass es auf kleinen Bildschirmen umbrechen kann */
+}
+
+.quote blockquote .quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: lighter;
+    color: rgb(50,50,50);
+    max-width: 80%;                /* verhindert, dass das Zitat die ganze Zeile nimmt */
+}
+
+.quote blockquote cite {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(30,30,30);
+    margin-left: auto;      /* nach rechts schieben */
+    align-self: flex-end;           /* Autor unten */
+}
+
+/* CTA Section */
 .cta-section {
-background: white;
-display: flex;
-padding: 0 100px;
+    background: white;
+    padding: 50px;
 }
 
-.cta-content {
-display: flex;
-justify-content: space-between;
-gap: 50px;
-align-items: center;  
-padding: 0 20px;
-background: rgb(20, 101, 94);
-width: 100%;
-margin: 50px 0
+.cta-section .container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: rgb(6, 149, 177);
+    color: white;
+    align-items: center;
 }
 
 .cta-text {
     flex: 1;
-    color: white;
 }
 
 .cta-button {
-    background: rgb(9, 101, 94);
+    background: rgb(6, 149, 177);
     color: white;
-    border: 2px solid white;
+    border: 3px solid rgb(87, 171, 213);
     border-radius: 10px;
     padding: 10px 20px;
+    font-size: 14px;
 }
 
-footer{
-background: black;
-color: white;
-display: flex;
-font-size: x-small;
-justify-content: center;
-align-items: center;
-height: 80px;
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    display: flex;
+    font-size: x-small;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+/* Hover Effekte */
+a:hover, .cta-button:hover, .hero-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+    header .container,
+    .hero .container,
+    .cta-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
